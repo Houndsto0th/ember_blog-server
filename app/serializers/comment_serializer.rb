@@ -1,7 +1,7 @@
 class CommentSerializer < ActiveModel::Serializer
-  attributes :body, :user_id, :post_id
-  
+  attributes :body, :id
 
-  has_one :user
-  has_one :post
+
+  has_one :user, except: [:comment]
+  has_one :post, except: [:comment]
 end
